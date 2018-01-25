@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import {  RelatorioPage } from '../pages/relatorio/relatorio';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { PerfilPage } from '../pages/perfil/perfil';
@@ -24,7 +24,8 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
-      { title: 'Perfil', component: PerfilPage }
+      { title: 'Perfil', component: PerfilPage },
+      { title: 'Relatorio', component: RelatorioPage }
     ];
 
   }

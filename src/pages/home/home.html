@@ -8,11 +8,13 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+  
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <button ion-button full (click)="chamaPerfil()">Perfil</button>
+
+  <button ion-button full (click)="chamaRelatorio()" >Relatorio</button>
+  
+  <button ion-button full (click)="chamaPresenca()">Marcar Presença</button>
+
 </ion-content>
