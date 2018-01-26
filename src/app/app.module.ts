@@ -8,6 +8,7 @@ import { ListPage } from '../pages/list/list';
 
 import{PROVIDERS,NATIVEPROVIDERS,MODULES,NATIVEMODULES} from './app.imports'
 
+
 @NgModule({
   declarations:[
     MyApp, 
@@ -27,7 +28,8 @@ import{PROVIDERS,NATIVEPROVIDERS,MODULES,NATIVEMODULES} from './app.imports'
   providers: [
    PROVIDERS,
    NATIVEPROVIDERS,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+   
   ]
 })
 export class AppModule {}
