@@ -12,13 +12,20 @@ import { ScannerPageModule } from '../pages/scanner/scanner.module';
 import{BrowserModule} from '@angular/platform-browser';
 import {ToastServicesProvider } from '../providers/toast-services/toast-services';
 import {AlertServicesProvider } from '../providers/alert-services/alert-services';
+import {AuthServiceProvider } from '../providers/auth-service';
+import {UserServiceProvider } from '../providers/user-service';
+import { IonicStorageModule } from '@ionic/storage';
 export const PROVIDERS=[
     ToastServicesProvider,
-    AlertServicesProvider
+    AlertServicesProvider,
+    AuthServiceProvider,
+    UserServiceProvider
 ]
 export const NATIVEPROVIDERS=[
     StatusBar,
     SplashScreen,
+   
+
    
 
 ]
@@ -32,5 +39,6 @@ export const MODULES=[
 ]
 export const NATIVEMODULES=[
   
-    BrowserModule
+    BrowserModule,
+    IonicStorageModule
 ]
