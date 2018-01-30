@@ -44,6 +44,6 @@ export const MODULES=[
 export const NATIVEMODULES=[
   
     BrowserModule,
-    IonicStorageModule,
+    IonicStorageModule.forRoot(),
     HttpClientModule
 ]

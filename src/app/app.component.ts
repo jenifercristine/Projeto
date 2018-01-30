@@ -6,14 +6,14 @@ import {  RelatorioPage } from '../pages/relatorio/relatorio';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { PerfilPage } from '../pages/perfil/perfil';
-
+import { LoginPage } from '../pages/login/login';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = LoginPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -25,7 +25,9 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
       { title: 'Perfil', component: PerfilPage },
-      { title: 'Relatorio', component: RelatorioPage }
+      { title: 'Relatorio', component: RelatorioPage },
+      { title: 'Login', component: LoginPage }
+
     ];
 
   }

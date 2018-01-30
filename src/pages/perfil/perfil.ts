@@ -12,7 +12,7 @@ import { Storage } from '@ionic/storage';
   templateUrl: 'perfil.html',
 })
 export class PerfilPage {
-  profilePicture: 'https://adorable.io/avatar/200/bob';
+  profilePicture = 'https://adorable.io/avatar/200/bob';
   placeholderPicture: string;
 
 user ={ id: "" , name: "", imageUrl: ""};
