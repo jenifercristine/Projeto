@@ -11,10 +11,22 @@
 
   
 
-  <button ion-button full (click)="chamaAlerta2()">Perfil</button>
-
-  <button ion-button full (click)="chamaAlert()" >Relatorio</button>
+  <h1>
+    <button ion-button color="dark" full round (click)="scan()">Start Scan</button>
+  </h1>
   
-  <button ion-button full  (click)="chamaToast()">Marcar Presença</button>
+  <ion-card *ngIf="productFound">
+    <ion-card-header>
+      <h2>Price: $ {{selectedProduct.price}}</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <ul>
+        <li>{{selectedProduct.plu}}</li>
+        <li>{{selectedProduct.name}}</li>
+        <li>{{selectedProduct.desc}}</li>
+        
+      </ul>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

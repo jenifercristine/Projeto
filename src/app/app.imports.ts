@@ -15,6 +15,9 @@ import {AlertServicesProvider } from '../providers/alert-services/alert-services
 import {AuthServiceProvider } from '../providers/auth-service';
 import {UserServiceProvider } from '../providers/user-service';
 import { IonicStorageModule } from '@ionic/storage';
+import {ScannerServiceProvider} from '../providers/scanner-services';
+import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 export const PROVIDERS=[
     ToastServicesProvider,
     AlertServicesProvider,
@@ -24,7 +27,8 @@ export const PROVIDERS=[
 export const NATIVEPROVIDERS=[
     StatusBar,
     SplashScreen,
-   
+    ScannerServiceProvider,
+    HttpClient
 
    
 
@@ -40,5 +44,6 @@ export const MODULES=[
 export const NATIVEMODULES=[
   
     BrowserModule,
-    IonicStorageModule
+    IonicStorageModule,
+    HttpClientModule
 ]

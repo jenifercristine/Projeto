@@ -5,44 +5,45 @@ import {ToastServicesProvider } from '../../providers/toast-services/toast-servi
 import {AlertServicesProvider } from '../../providers/alert-services/alert-services';
 import {AuthServiceProvider } from '../../providers/auth-service';
 import {UserServiceProvider } from '../../providers/user-service';
-import { IonicStorageModule } from '@ionic/storage';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-perfil',
   templateUrl: 'perfil.html',
 })
 export class PerfilPage {
-  profilePicture: string;
+  profilePicture: 'https://adorable.io/avatar/200/bob';
   placeholderPicture: string;
 
 user ={ id: "" , name: "", imageUrl: ""};
 
-  constructor(private alertService:AlertServicesProvider,private authService:AuthServiceProvider,private userService:UserServiceProvider,
-    private toastService: ToastServicesProvider,private storage:Storage, private camera :Camera ) {
+  constructor(private alertService: AlertServicesProvider,
+    private authService: AuthServiceProvider,
+    private userService:UserServiceProvider,
+    private toastService: ToastServicesProvider,
+    private storage:Storage, 
+    private camera :Camera ) {
       
-      this.placeholderPicture="https://adorable.io/avatar/200/bob"
-  
-  
   }
 
   openGallerry():void{
     let cameraOptions={
 
       sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
-destinationsType: this.camera.DestinationType.DATA_URL,
-quality:100,
-targetHeight:1000,
-targetHidth:1000,
-encondingType:this.camera.EncodingType.JPEG,
-correctDrientation:true
-};
-this.camera
-.getPicture(cameraOptions)
-.then(
-imageData => this.updateImage(imageData),
-err => this.toastService.presentToast("Error:"+err)
+      destinationsType: this.camera.DestinationType.DATA_URL,
+      quality:100,
+      targetHeight:1000,
+      targetHidth:1000,
+      encondingType:this.camera.EncodingType.JPEG,
+      correctDrientation:true
+      };
+      this.camera
+      .getPicture(cameraOptions)
+      .then(
+      imageData => this.updateImage(imageData),
+      err => this.toastService.presentToast("Error:"+err)
 
-);
+      );
   }
 updateImage(value){
 
