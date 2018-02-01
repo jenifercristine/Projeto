@@ -4,15 +4,15 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 
-import { ListPage } from '../pages/list/list';
+
 
 import{PROVIDERS,NATIVEPROVIDERS,MODULES,NATIVEMODULES} from './app.imports'
 
 
+
 @NgModule({
   declarations:[
-    MyApp, 
-    ListPage
+    MyApp
   ],
   imports: [
  MODULES,
@@ -21,14 +21,14 @@ import{PROVIDERS,NATIVEPROVIDERS,MODULES,NATIVEMODULES} from './app.imports'
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    ListPage
+    MyApp
     
   ],
   providers: [
    PROVIDERS,
    NATIVEPROVIDERS,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+
   ]
 })
 export class AppModule {}

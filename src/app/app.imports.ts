@@ -16,6 +16,7 @@ import {AlertServicesProvider } from '../providers/alert-services/alert-services
 import {AuthServiceProvider } from '../providers/auth-service';
 import {UserServiceProvider } from '../providers/user-service';
 import {RelatorioServiceProvider } from '../providers/relatorio-services/relatorio-services';
+import {TokenServicesProvider } from '../providers/token-services/token-services';
 import { IonicStorageModule } from '@ionic/storage';
 import {ScannerServiceProvider} from '../providers/scanner-services';
 import { HttpClient } from '@angular/common/http';
@@ -28,14 +29,15 @@ export const PROVIDERS=[
     AlertServicesProvider,
     AuthServiceProvider,
     UserServiceProvider,
-    RelatorioServiceProvider
-
+    RelatorioServiceProvider,
+    TokenServicesProvider 
 ]
 export const NATIVEPROVIDERS=[
     StatusBar,
     SplashScreen,
     ScannerServiceProvider,
-    HttpClient
+    Camera,
+   
 
    
 
@@ -53,6 +55,6 @@ export const NATIVEMODULES=[
     BrowserModule,
     IonicStorageModule.forRoot(),
     HttpClientModule,
-    HttpModule,
-    Camera
+    HttpModule
+    
 ]

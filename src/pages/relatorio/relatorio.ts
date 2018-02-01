@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {RelatorioServiceProvider } from '../../providers/relatorio-services/relatorio-services';
 import { UserServiceProvider } from '../../providers/user-service';
 import {OnInit} from '@angular/core';
+import { ImprimirPage } from '../imprimir/imprimir';
 
 /**
  * Generated class for the RelatorioPage page.
@@ -90,7 +91,7 @@ this.rest=res.json();
 
 abreFecha(data){
 if(data.abrirInformacoes){
-
+data.abrirInformacoes=false;
   data.icon="ios-add-circle-outline";
 }else{
 
@@ -102,7 +103,7 @@ if(data.abrirInformacoes){
 }
 
 imprimir(){
-  
+  this.navCtrl.push(ImprimirPage,{tems:this.items});
 }
 
 

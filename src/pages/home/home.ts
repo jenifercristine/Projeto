@@ -8,7 +8,7 @@ import {ToastServicesProvider } from '../../providers/toast-services/toast-servi
 import {AlertServicesProvider } from '../../providers/alert-services/alert-services';
 import { Title } from '@angular/platform-browser/src/browser/title';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
-
+import{AuthServiceProvider} from'../../providers/auth-service';
 @IonicPage()
 @Component({
   selector: 'page-home',
@@ -16,9 +16,15 @@ import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public toast :ToastServicesProvider,public alert :AlertServicesProvider) {
+  constructor(public navCtrl: NavController,
+     public toast :ToastServicesProvider,
+     public alert :AlertServicesProvider,
+     public nav :NavController,
+     public auth:AuthServiceProvider ) {
 
-  
+    const isAuthorized =this.auth.isAuthorized();
+    if(!isAuthorized)this.nav.setRoot("LoginPage");
+
   }
    chamaPerfil (){
    this.navCtrl.push(PerfilPage);

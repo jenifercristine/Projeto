@@ -14,8 +14,13 @@ import {RelatorioPage} from '../relatorio/relatorio';
   templateUrl: 'imprimir.html',
 })
 export class ImprimirPage {
-
+public ItensParam;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+  if(navParams.get("items")){
+
+    this.ItensParam=navParams.get("items");
+  }
+  
   }
 
   ionViewDidLoad() {
