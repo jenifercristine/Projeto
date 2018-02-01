@@ -14,5 +14,22 @@
 
 
 <ion-content padding>
-
+<p>teste</p>
+    <ion-list *ngFor="let item of items">
+            <ion-card>
+                  <ion-card-header (click)="abreFecha(item)">
+                    <ion-item>
+                        <ion-icon [name]="item.logo" item-start></ion-icon>
+                        <ion-label>{{item.titulo}}</ion-label>
+                        <ion-icon [name]="item.icon" item-end></ion-icon>
+                    </ion-item>
+                  </ion-card-header>
+                  <ion-card-content *ngIf="item.abrirInformacoes">
+                        <ion-label>{{item.detalhes}}</ion-label>
+                  </ion-card-content>
+            </ion-card>
+    </ion-list>
+    <h1>
+        <button ion-button color="dark" full round (click)="imprimir()">Imprimir</button>
+      </h1>
 </ion-content>

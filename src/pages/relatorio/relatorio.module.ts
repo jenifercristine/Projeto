@@ -9,5 +9,8 @@ import { RelatorioPage } from './relatorio';
   imports: [
     IonicPageModule.forChild(RelatorioPage),
   ],
+  exports: [
+    RelatorioPage
+  ]
 })
 export class RelatorioPageModule {}
