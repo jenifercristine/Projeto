@@ -38,6 +38,7 @@ export class LoginPage {
 
   register() {
     this.auth.login(this.user).subscribe(res => {
+      
       console.log(res);
 
       if (res) {

@@ -30,7 +30,7 @@ export class AuthServiceProvider {
 
   public buildToken(credentials) {
     //criando token
-    const token = btoa(`${credentials.login}:${credentials.senha}`);
+    const token = btoa(`mobile:alunos`);
     return token;
   }
 
@@ -47,8 +47,8 @@ export class AuthServiceProvider {
 
     };
     const params = new HttpParams()
-      .set("username", "usuario")
-      .append("password", "password")
+      .set("username", credentials.login)
+      .append("password", credentials.senha)
       .append("grant_type", "password");
     return this.http.post(`${uri}/oauth/token`, params.toString(), httpOptions);
   }
